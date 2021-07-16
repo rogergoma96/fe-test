@@ -5,4 +5,5 @@ module.exports = {
   },
   testEnvironment: 'jest-environment-jsdom-global',
   globals: {},
+  setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
 };

@@ -1,0 +1,35 @@
+@font-face {
+  font-display: fallback;
+  font-family: 'Spartan-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/Spartan-Regular.woff2') format('woff2'),
+    url('../assets/fonts/Spartan-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: 'Spartan-Bold';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/Spartan-Bold.woff2') format('woff2'),
+    url('../assets/fonts/Spartan-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: 'Spartan-Medium';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/Spartan-Medium.woff2') format('woff2'),
+    url('../assets/fonts/Spartan-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: 'Spartan-Light';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/Spartan-Light.woff2') format('woff2'),
+    url('../assets/fonts/Spartan-Light.woff') format('woff');
+}

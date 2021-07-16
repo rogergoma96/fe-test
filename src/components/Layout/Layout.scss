@@ -1,0 +1,38 @@
+.header {
+  align-items: center;
+  border-bottom: 1px solid black;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  left: 0;
+  padding: 0 1.5rem 0 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.logo {
+  appearance: none;
+  color: black;
+  text-decoration: none;
+  font-family: 'Spartan-Bold';
+  font-size: 18px;
+}
+
+.main {
+  margin-top: 50px;
+}
+
+.cart {
+  display: flex;
+  position: relative;
+}
+
+.items {
+  font-size: 0.7rem;
+  position: absolute;
+  bottom: -6px;
+  margin: 0;
+  right: -12px;
+  font-family: 'Spartan-medium', sans-serif;
+}
