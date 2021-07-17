@@ -12,7 +12,7 @@ import styles from './Product.scss';
  * @returns {object} JSX
  */
 const Product = ({ brand, id, imgUrl, model, price }) => (
-  <Link to={`/product/${id}`} className={styles.product}>
+  <Link to={`/${id}`} className={styles.product}>
     <img alt={model} src={imgUrl} loading="lazy" />
     <div className={styles.info}>
       <p className={styles.brand}>{brand}</p>

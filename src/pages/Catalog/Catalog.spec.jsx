@@ -5,7 +5,7 @@ import getProductsMock from '../../services/catalogServices/__mocks__/getProduct
 
 global.fetch = jest.fn(() => Promise.resolve({ json: () => getProductsMock }));
 
-describe('Catalog', () => {
+describe('<Catalog />', () => {
   it('should render without crashing', async () => {
     renderWithRouter(<Catalog />);
 

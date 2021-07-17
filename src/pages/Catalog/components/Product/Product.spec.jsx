@@ -1,8 +1,8 @@
 import { fireEvent, screen } from '@testing-library/react';
-import renderWithRouter from '../../../utils/testUtils';
+import renderWithRouter from '../../../../utils/testUtils';
 import Product from './Product';
 
-describe('Product', () => {
+describe('<Product />', () => {
   const props = {
     brand: 'Acer',
     id: '1',
@@ -38,6 +38,6 @@ describe('Product', () => {
 
     fireEvent.click(screen.getByAltText('M900'));
 
-    expect(window.location.pathname).toBe('/product/1');
+    expect(window.location.pathname).toBe('/1');
   });
 });

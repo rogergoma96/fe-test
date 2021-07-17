@@ -1,0 +1,66 @@
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+}
+
+.image {
+  padding: 0 16px;
+}
+
+.main-info {
+  margin-bottom: 32px;
+}
+
+.model {
+  font-family: 'Spartan-Medium', sans-serif;
+  font-size: 1rem;
+  margin-top: 32px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.price {
+  color: #ff6000;
+  font-family: 'Spartan-Bold', sans-serif;
+  font-size: 2rem;
+  margin-top: 8px;
+}
+
+.specs-title {
+  font-family: 'Spartan-Medium', sans-serif;
+  margin-bottom: 16px;
+}
+
+.select {
+  border: 1px solid black;
+  font-family: 'Spartan-Regular', sans-serif;
+  height: 40px;
+  margin-bottom: 16px;
+  padding: 0 16px;
+  width: 100%;
+
+  &-label {
+    font-family: 'Spartan-Medium', sans-serif;
+    margin-bottom: 8px;
+  }
+}
+
+.button {
+  background-color: #ff6000;
+  border: none;
+  color: white;
+  font-family: 'Spartan-Bold', sans-serif;
+  height: 42px;
+  letter-spacing: 1px;
+  margin-bottom: 64px;
+  margin-top: 24px;
+  width: 100%;
+}
+
+.specs {
+  p {
+    margin: 8px 0;
+  }
+}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import getProducts from '../../services/catalogServices/catalogServices';
 import styles from './Catalog.scss';
-import Product from './Product/Product';
+import Product from './components/Product/Product';
 
 /**
  * Product list.
