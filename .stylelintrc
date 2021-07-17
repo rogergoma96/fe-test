@@ -5,5 +5,12 @@
   ],
   "rules": {
     "order/properties-alphabetical-order": true,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ],
+    "declaration-colon-newline-after": null,
   }
 }

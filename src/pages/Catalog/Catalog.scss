@@ -1,3 +1,43 @@
-.title {
-  color: red;
+.products {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fill, minmax(max(200px, 25%), 1fr));
+  justify-items: center;
+  padding: 64px 0;
+  row-gap: 64px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 16px;
+  width: 100%;
+}
+
+.info {
+  margin-top: 28px;
+}
+
+.brand,
+.model,
+.price,
+.sold-out {
+  margin: 0 0 8px;
+}
+
+.brand {
+  font-family: 'Spartan-Bold', sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.price,
+.model,
+.sold-out {
+  font-size: 0.9rem;
+}
+
+.sold-out {
+  color: #666;
 }

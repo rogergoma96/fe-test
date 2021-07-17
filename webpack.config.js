@@ -18,6 +18,7 @@ module.exports = (env, argv) => {
       historyApiFallback: true,
       watchContentBase: true,
     },
+    devtool: argv.mode === 'development' ? 'source-map' : false,
     module: {
       rules: [
         {
