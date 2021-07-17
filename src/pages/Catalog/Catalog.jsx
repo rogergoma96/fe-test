@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import getProducts from '../../services/catalogServices/catalogServices';
 import styles from './Catalog.scss';
+import Product from './Product/Product';
 
 /**
  * Product list.
@@ -30,21 +31,23 @@ const Catalog = () => {
   }
 
   return (
-    <div className={styles.products} data-testid="product-catalog">
-      {products.map((product) => (
-        <div className={styles.product} key={product.id}>
-          <img alt={product.model} src={product.imgUrl} loading="lazy" />
-          <div className={styles.info}>
-            <p className={styles.brand}>{product.brand}</p>
-            <p className={styles.model}>{product.model}</p>
-            {product.price ? (
-              <p className={styles.price}>{product.price} €</p>
-            ) : (
-              <p className={styles['sold-out']}>AGOTADO</p>
-            )}
-          </div>
-        </div>
-      ))}
+    <div className={styles.catalog}>
+      <h1 className={styles.title}>Mobiles</h1>
+      <h2 className={styles.description}>
+        Free phones and smartphones from the best brands and exceptional prices.
+      </h2>
+      <div className={styles.products}>
+        {products.map((product) => (
+          <Product
+            key={product.id}
+            brand={product.brand}
+            id={product.id}
+            imgUrl={product.imgUrl}
+            model={product.model}
+            price={product.price}
+          />
+        ))}
+      </div>
     </div>
   );
 };

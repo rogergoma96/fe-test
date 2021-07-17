@@ -15,7 +15,7 @@ ReactDOM.render(
         <Route
           component={(props) => <ProductDetail {...props} />}
           exact
-          path="/:id"
+          path="/product/:id"
         />
         <Route component={(props) => <Catalog {...props} />} exact path="/" />
       </Switch>
