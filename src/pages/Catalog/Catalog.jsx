@@ -1,36 +1,34 @@
 import { useEffect, useRef, useState } from 'react';
 
-import getProducts from '../../services/catalogServices/catalogServices';
+import getProductsFromApiOrDB from '../../services/catalogServices/catalogServices';
 
 import Product from './components/Product/Product';
+import Searcher from './components/Searcher/Searcher';
 
 import styles from './Catalog.scss';
-import Searcher from './components/Searcher/Searcher';
 
 /**
  * Product list.
  *
  * @returns {Object} JSX
  */
-const Catalog = () => {
-  const [products, setProducts] = useState([]);
+const Catalog = ({ db }) => {
+  const [products, setProducts] = useState(null);
   const defaultProducts = useRef([]);
 
   /**
-   * Call to the api to fetch the products.
+   * Call to the api to fetch the products or consult to indexedDB.
    */
-  const fetchData = async () => {
-    const items = await getProducts();
-    setProducts(items);
-    defaultProducts.current = items;
-  };
+  useEffect(async () => {
+    const productsData = await getProductsFromApiOrDB(db);
 
-  /**
-   * Initialize the necessary data when mounting the component.
-   */
-  useEffect(() => {
-    fetchData();
+    defaultProducts.current = productsData;
+    setProducts(productsData);
   }, []);
+
+  if (!products) {
+    return null;
+  }
 
   return (
     <div className={styles.catalog}>
@@ -42,7 +40,7 @@ const Catalog = () => {
         defaultProducts={defaultProducts.current}
         onChange={setProducts}
       />
-      {products.length !== 0 ? (
+      {products.length !== 0 && (
         <div className={styles.products}>
           {products.map((product) => (
             <Product
@@ -55,8 +53,6 @@ const Catalog = () => {
             />
           ))}
         </div>
-      ) : (
-        <p className={styles.error}>No products found</p>
       )}
     </div>
   );

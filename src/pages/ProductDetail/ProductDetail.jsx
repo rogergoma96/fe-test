@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import getProduct from '../../services/productDetailServices/productDetailServices';
+import getProductFromApiOrDB from '../../services/productDetailServices/productDetailServices';
 
 import Actions from './components/Actions/Actions';
 import Info from './components/Info/Info';
@@ -14,23 +14,17 @@ import styles from './ProductDetail.scss';
  *
  * @returns {Object} JSX
  */
-const ProductDetail = () => {
+const ProductDetail = ({ db }) => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
 
   /**
    * Call the api to get the product information.
    */
-  const fetchData = async () => {
-    const productData = await getProduct(id);
-    setProduct(productData);
-  };
+  useEffect(async () => {
+    const productData = await getProductFromApiOrDB(db, id);
 
-  /**
-   * Initialize the necessary data when mounting the component.
-   */
-  useEffect(() => {
-    fetchData();
+    setProduct(productData);
   }, []);
 
   if (!product) {
