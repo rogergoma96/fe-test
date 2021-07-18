@@ -2,9 +2,14 @@
   background-color: #ff6000;
   border: none;
   color: white;
+  cursor: pointer;
   font-family: 'Spartan-Bold', sans-serif;
   height: 42px;
   letter-spacing: 1px;
   margin-top: 24px;
   width: 100%;
+
+  &:active {
+    background-color: #ff62009a;
+  }
 }

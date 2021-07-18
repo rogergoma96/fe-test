@@ -1,11 +1,16 @@
 .select {
-  border: 1px solid black;
+  border: 1px solid #666;
+  cursor: pointer;
   font-family: 'Spartan-Regular', sans-serif;
   height: 40px;
   margin-bottom: 16px;
   margin-top: 16px;
   padding: 0 16px;
   width: 100%;
+
+  &:hover {
+    border-color: black;
+  }
 }
 
 .label {
