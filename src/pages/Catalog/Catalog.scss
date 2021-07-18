@@ -23,7 +23,7 @@
 .products {
   display: grid;
   grid-auto-rows: auto;
-  grid-template-columns: repeat(auto-fill, minmax(max(200px, 25%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(max(180px, 25%), 1fr));
   justify-items: center;
   padding: 64px 0;
   row-gap: 64px;

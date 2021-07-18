@@ -9,11 +9,11 @@ global.fetch = jest.fn(() =>
 );
 
 describe('<ProductDetail />', () => {
-  it('should render without crashing', async () => {
+  it('should render with correct image', async () => {
     renderWithRouter(<ProductDetail />);
 
-    await waitFor(() => screen.getByText('Acer Iconia Tab 10 A3-A40'));
+    await waitFor(() => screen.getByAltText('Iconia Tab 10 A3-A40'));
 
-    expect(screen.getByText('Acer Iconia Tab 10 A3-A40')).toBeTruthy();
+    expect(screen.getByAltText('Iconia Tab 10 A3-A40')).toBeTruthy();
   });
 });

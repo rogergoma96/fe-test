@@ -1,0 +1,30 @@
+.specs-title {
+  border-bottom: 1px solid #b9b9b9;
+  font-family: 'Spartan-Bold', sans-serif;
+  margin-bottom: 32px;
+  padding-bottom: 8px;
+}
+
+.specs {
+  margin-top: 64px;
+}
+
+.spec {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0;
+
+  &-title {
+    font-family: 'Spartan-Bold', sans-serif;
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  &-description {
+    font-family: 'Spartan-medium', sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.4rem;
+    margin-bottom: 16px;
+  }
+}

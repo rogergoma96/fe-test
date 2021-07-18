@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
+
 import getProducts from '../../services/catalogServices/catalogServices';
-import styles from './Catalog.scss';
+
 import Product from './components/Product/Product';
+
+import styles from './Catalog.scss';
 
 /**
  * Product list.
  *
- * @returns {object} JSX
+ * @returns {Object} JSX
  */
 const Catalog = () => {
   const [products, setProducts] = useState([]);

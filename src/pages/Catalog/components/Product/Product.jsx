@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+
 import styles from './Product.scss';
 
 /**
@@ -9,7 +10,7 @@ import styles from './Product.scss';
  * @param {string} imgUrl - product image url.
  * @param {string} model - Product model.
  * @param {string} price - Product price.
- * @returns {object} JSX
+ * @returns {Object} JSX
  */
 const Product = ({ brand, id, imgUrl, model, price }) => (
   <Link to={`/${id}`} className={styles.product}>
