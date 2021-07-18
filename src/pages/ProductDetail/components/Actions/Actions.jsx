@@ -54,7 +54,7 @@ const Actions = ({ colors, productId, internalMemory, price }) => {
       )}
       {price && (
         <button className={styles.button} type="submit">
-          ADD TO CART
+          Add to cart
         </button>
       )}
     </form>
