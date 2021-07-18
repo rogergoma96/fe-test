@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 
-import Specs from './Specs';
+import Specifications from './Specifications';
 
-describe('<Specs />', () => {
+describe('<Specifications />', () => {
   const props = {
     cpu: 'Quad-core 1.6 GHz',
     bluetooth: ['4.0', 'A2DP', 'LE'],
@@ -17,13 +17,13 @@ describe('<Specs />', () => {
   };
 
   it('should render without crashing', () => {
-    render(<Specs />);
+    render(<Specifications />);
 
     expect(screen.getByText('Product specifications')).toBeInTheDocument();
   });
 
   it('should render with all specs', () => {
-    render(<Specs {...props} />);
+    render(<Specifications {...props} />);
 
     expect(screen.getByText('Quad-core 1.6 GHz')).toBeInTheDocument();
     expect(screen.getByText('4.0 - A2DP - LE')).toBeInTheDocument();
@@ -46,7 +46,7 @@ describe('<Specs />', () => {
   it('should render without cpu specification', () => {
     const newProps = JSON.parse(JSON.stringify(props));
     newProps.cpu = '';
-    render(<Specs {...newProps} />);
+    render(<Specifications {...newProps} />);
 
     expect(screen.queryByText('CPU')).not.toBeInTheDocument();
   });

@@ -1,11 +1,19 @@
-import { screen, render, fireEvent } from '@testing-library/react';
+import { act, screen, render, fireEvent } from '@testing-library/react';
+
+import addToCartServiceMock from '../../../../services/addToCartServices/__mocks__/addToCartServiceMock.json';
+
 import Actions from './Actions';
+
+global.fetch = jest.fn(() =>
+  Promise.resolve({ json: () => addToCartServiceMock })
+);
 
 describe('<Actions />', () => {
   const props = {
     colors: ['Black', 'White', 'Red'],
     internalMemory: ['16GB', '32GB'],
     price: '170',
+    productId: '1234',
   };
 
   it('should render without crashing', () => {
@@ -31,10 +39,13 @@ describe('<Actions />', () => {
     expect(screen.getByText('Red')).toBeInTheDocument();
   });
 
-  it('should update cart number when add product to cart', () => {
+  it('should update cart number when add product to cart', async () => {
+    const spy = jest.spyOn(window, 'dispatchEvent');
     render(<Actions {...props} />);
 
-    fireEvent.click(screen.getByRole('button'));
+    await act(async () => fireEvent.click(screen.getByRole('button')));
+
+    expect(spy).toHaveBeenCalled();
   });
 
   it('should render without price', () => {
@@ -43,5 +54,17 @@ describe('<Actions />', () => {
     render(<Actions {...newProps} />);
 
     expect(screen.queryByRole('button')).not.toBeInTheDocument();
+  });
+
+  it('should select different color', () => {
+    render(<Actions {...props} />);
+    fireEvent.change(screen.getByTestId('colors'), { target: { value: 2 } });
+  });
+
+  it('should select different internal memory', () => {
+    render(<Actions {...props} />);
+    fireEvent.change(screen.getByTestId('internalMemory'), {
+      target: { value: 2 },
+    });
   });
 });

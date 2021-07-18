@@ -1,9 +1,25 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 import renderWithRouter from '../../utils/testUtils';
 
 import Layout from './Layout';
 
 describe('Layout', () => {
+  it('should update cart counter', async () => {
+    renderWithRouter(<Layout />, { route: '/productId' });
+
+    screen.getByText('0');
+
+    await act(async () => {
+      const customEvent = new CustomEvent('addToBag', { detail: { count: 1 } });
+
+      window.dispatchEvent(customEvent);
+    });
+
+    await waitFor(() => screen.getByText('1'));
+
+    screen.getByText('1');
+  });
+
   it('should render with logo', () => {
     renderWithRouter(<Layout />);
 

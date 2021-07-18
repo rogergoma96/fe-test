@@ -23,7 +23,7 @@ describe('<Select />', () => {
 
     render(<Select {...props} />);
 
-    fireEvent.change(screen.getByTestId('select'), { target: { value: 2 } });
+    fireEvent.change(screen.getByTestId('colors'), { target: { value: 2 } });
 
     expect(spy).toHaveBeenCalled();
   });

@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import getProducts from '../../services/catalogServices/catalogServices';
 
 import Product from './components/Product/Product';
 
 import styles from './Catalog.scss';
+import Searcher from './components/Searcher/Searcher';
 
 /**
  * Product list.
@@ -13,6 +14,7 @@ import styles from './Catalog.scss';
  */
 const Catalog = () => {
   const [products, setProducts] = useState([]);
+  const defaultProducts = useRef([]);
 
   /**
    * Call to the api to fetch the products.
@@ -20,6 +22,7 @@ const Catalog = () => {
   const fetchData = async () => {
     const items = await getProducts();
     setProducts(items);
+    defaultProducts.current = items;
   };
 
   /**
@@ -29,28 +32,32 @@ const Catalog = () => {
     fetchData();
   }, []);
 
-  if (products.length === 0) {
-    return null;
-  }
-
   return (
     <div className={styles.catalog}>
       <h1 className={styles.title}>Mobiles</h1>
       <h2 className={styles.description}>
         Free phones and smartphones from the best brands and exceptional prices.
       </h2>
-      <div className={styles.products}>
-        {products.map((product) => (
-          <Product
-            key={product.id}
-            brand={product.brand}
-            id={product.id}
-            imgUrl={product.imgUrl}
-            model={product.model}
-            price={product.price}
-          />
-        ))}
-      </div>
+      <Searcher
+        defaultProducts={defaultProducts.current}
+        onChange={setProducts}
+      />
+      {products.length !== 0 ? (
+        <div className={styles.products}>
+          {products.map((product) => (
+            <Product
+              key={product.id}
+              brand={product.brand}
+              id={product.id}
+              imgUrl={product.imgUrl}
+              model={product.model}
+              price={product.price}
+            />
+          ))}
+        </div>
+      ) : (
+        <p className={styles.error}>No products found</p>
+      )}
     </div>
   );
 };

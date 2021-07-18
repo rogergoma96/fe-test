@@ -6,13 +6,15 @@
 }
 
 .image {
-  padding: 0 16px;
+  background-color: #dadada75;
+  height: auto;
   width: 100%;
 }
 
 @media (min-width: 600px) {
   .product-detail {
     flex-direction: row;
+    gap: 32px;
     justify-content: space-around;
     max-width: 1000px;
   }

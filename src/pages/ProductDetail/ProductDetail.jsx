@@ -5,7 +5,7 @@ import getProduct from '../../services/productDetailServices/productDetailServic
 
 import Actions from './components/Actions/Actions';
 import Info from './components/Info/Info';
-import Specs from './components/Specs/Specs';
+import Specifications from './components/Specifications/Specifications';
 
 import styles from './ProductDetail.scss';
 
@@ -39,7 +39,13 @@ const ProductDetail = () => {
 
   return (
     <div className={styles['product-detail']}>
-      <img alt={product.model} className={styles.image} src={product.imgUrl} />
+      <img
+        width="160"
+        height="212"
+        alt={product.model}
+        className={styles.image}
+        src={product.imgUrl}
+      />
       <div className={styles['container-info']}>
         <Info
           brand={product.brand}
@@ -52,7 +58,7 @@ const ProductDetail = () => {
           price={product.price}
           internalMemory={product.internalMemory}
         />
-        <Specs
+        <Specifications
           battery={product.battery}
           bluetooth={product.bluetooth}
           cpu={product.cpu}

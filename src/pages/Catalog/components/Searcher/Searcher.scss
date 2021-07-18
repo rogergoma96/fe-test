@@ -1,0 +1,23 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Spartan-Medium', sans-serif;
+  font-size: 0.8rem;
+  padding: 32px 16px 16px;
+  width: 100%;
+}
+
+.input {
+  border: 1px solid black;
+  font-family: 'Spartan-Regular', sans-serif;
+  height: 40px;
+  margin-top: 8px;
+  padding: 0 16px;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .input {
+    width: 300px;
+  }
+}

@@ -32,6 +32,11 @@
   width: 100%;
 }
 
+.error {
+  align-self: flex-start;
+  padding: 16px 16px;
+}
+
 @media (min-width: 600px) {
   .title,
   .description {

@@ -14,7 +14,14 @@ import styles from './Product.scss';
  */
 const Product = ({ brand, id, imgUrl, model, price }) => (
   <Link to={`/${id}`} className={styles.product}>
-    <img alt={model} src={imgUrl} loading="lazy" />
+    <img
+      className={styles.image}
+      width="160"
+      height="212"
+      alt={model}
+      src={imgUrl}
+      loading="lazy"
+    />
     <div className={styles.info}>
       <p className={styles.brand}>{brand}</p>
       <p className={styles.model}>{model}</p>

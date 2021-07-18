@@ -13,7 +13,7 @@ const Select = ({ label, options, id, onChange }) => (
   <label className={styles.label} htmlFor={id}>
     {label}
     <select
-      data-testid="select"
+      data-testid={id}
       className={styles.select}
       id={id}
       onChange={(e) => onChange(e)}

@@ -1,5 +1,6 @@
 import { useRef } from 'react';
-import styles from './Specs.scss';
+
+import styles from './Specifications.scss';
 
 /**
  * Product specifications.
@@ -16,7 +17,7 @@ import styles from './Specs.scss';
  * @param {string || Object []} weight
  * @returns
  */
-const Specs = ({
+const Specifications = ({
   cpu,
   bluetooth,
   ram,
@@ -87,4 +88,4 @@ const Specs = ({
   );
 };
 
-export default Specs;
+export default Specifications;
