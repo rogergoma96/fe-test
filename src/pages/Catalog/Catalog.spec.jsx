@@ -1,9 +1,36 @@
 import { screen, waitFor } from '@testing-library/react';
 import Catalog from './Catalog';
 import renderWithRouter from '../../utils/testUtils';
-import getProductsMock from '../../services/catalogServices/__mocks__/getProductsMock.json';
 
-global.fetch = jest.fn(() => Promise.resolve({ json: () => getProductsMock }));
+jest.mock('../../services/catalogServices/catalogServices', () => ({
+  __esModule: true,
+  default: jest.fn(() => [
+    {
+      brand: 'Acer',
+      id: 'ZmGrkLRPXOTpxsU4jjAcv',
+      imgUrl:
+        'https://front-test-api.herokuapp.com/images/ZmGrkLRPXOTpxsU4jjAcv.jpg',
+      model: 'Iconia Talk S',
+      price: '170',
+    },
+    {
+      brand: 'Samsung',
+      id: 'y0gsWxpC3VOMjM-QOtYAy',
+      imgUrl:
+        'https://front-test-api.herokuapp.com/images/y0gsWxpC3VOMjM-QOtYAy',
+      model: 'M900',
+      price: '250',
+    },
+    {
+      brand: 'Iphone',
+      id: 'pMZMhe_ZaAPZoaCCtlDrg',
+      imgUrl:
+        'https://front-test-api.herokuapp.com/images/pMZMhe_ZaAPZoaCCtlDrg',
+      model: 'Liquid Jade 2',
+      price: '',
+    },
+  ]),
+}));
 
 describe('<Catalog />', () => {
   it('should render without crashing', async () => {

@@ -23,14 +23,14 @@ describe('Layout', () => {
   it('should render with logo', () => {
     renderWithRouter(<Layout />);
 
-    expect(screen.getByText('FE-TEST')).toBeInTheDocument();
+    expect(screen.getByText('MOBILE ZONE')).toBeInTheDocument();
   });
 
   it('should simulate click in the logo', () => {
     renderWithRouter(<Layout />, { route: '/productId' });
 
     expect(window.location.pathname).toBe('/productId');
-    fireEvent.click(screen.getByText('FE-TEST'));
+    fireEvent.click(screen.getByText('MOBILE ZONE'));
     expect(window.location.pathname).toBe('/');
   });
 });

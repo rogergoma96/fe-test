@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
     <>
       <header className={styles.header}>
         <Link to="/" className={styles.logo}>
-          FE-TEST
+          MOBILE ZONE
         </Link>
         <Breadcrumbs />
         <div className={styles.cart}>

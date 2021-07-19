@@ -1,16 +1,20 @@
 import { Redirect } from 'react-router-dom';
+import Dexie from 'dexie';
+
 import Catalog from '../pages/Catalog/Catalog';
 import ProductDetail from '../pages/ProductDetail/ProductDetail';
 
 const routeConfig = [
   {
     path: '/products',
-    component: (props) => <Catalog {...props} />,
+    component: (props) => <Catalog db={new Dexie('Catalog')} {...props} />,
     exact: true,
   },
   {
     path: '/products/:model',
-    component: (props) => <ProductDetail {...props} />,
+    component: (props) => (
+      <ProductDetail db={new Dexie('ProductDetail')} {...props} />
+    ),
     exact: true,
   },
   {
