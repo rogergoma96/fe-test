@@ -4,7 +4,7 @@ import withBreadcrumbs from 'react-router-breadcrumbs-hoc';
 import styles from './Breadcrumbs.scss';
 
 const PureBreadcrumbs = ({ breadcrumbs }) => (
-  <ol className={styles.breadcrumbs}>
+  <ol className={styles.breadcrumbs} data-testid="breadcrumbs">
     {breadcrumbs.map(
       ({ breadcrumb, match }, index) =>
         index !== 0 && (

@@ -38,6 +38,6 @@ describe('<Product />', () => {
 
     fireEvent.click(screen.getByAltText('M900'));
 
-    expect(window.location.pathname).toBe('/1');
+    expect(window.location.pathname).toBe('/products/Acer_M900');
   });
 });

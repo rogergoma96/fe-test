@@ -13,8 +13,8 @@ import styles from './Product.scss';
  * @returns {Object} JSX
  */
 const Product = ({ brand, id, imgUrl, model, price }) => {
-  const transformedModel = model.replaceAll(' ', '_');
-  const transformedBrand = brand.replaceAll(' ', '_');
+  const transformedModel = model.replace(/ /g, '_');
+  const transformedBrand = brand.replace(/ /g, '_');
 
   return (
     <Link
