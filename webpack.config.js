@@ -12,6 +12,7 @@ module.exports = (env, argv) => {
     output: {
       path: path.join(__dirname, '/dist'),
       filename: mode === 'development' ? 'main.js' : 'main.[contenthash].js',
+      publicPath: '/',
     },
     devServer: {
       port: 3000,

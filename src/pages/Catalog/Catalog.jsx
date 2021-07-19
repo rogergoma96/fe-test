@@ -13,7 +13,7 @@ import Searcher from './components/Searcher/Searcher';
  * @returns {Object} JSX
  */
 const Catalog = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(null);
   const defaultProducts = useRef([]);
 
   /**
@@ -31,6 +31,10 @@ const Catalog = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  if (!products) {
+    return null;
+  }
 
   return (
     <div className={styles.catalog}>
@@ -56,7 +60,7 @@ const Catalog = () => {
           ))}
         </div>
       ) : (
-        <p className={styles.error}>No products found</p>
+        <p className={styles.error}>Products no found</p>
       )}
     </div>
   );

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import getProduct from '../../services/productDetailServices/productDetailServices';
 
@@ -15,13 +15,15 @@ import styles from './ProductDetail.scss';
  * @returns {Object} JSX
  */
 const ProductDetail = () => {
-  const { id } = useParams();
+  const { search } = useLocation();
   const [product, setProduct] = useState(null);
 
   /**
    * Call the api to get the product information.
    */
   const fetchData = async () => {
+    const params = new URLSearchParams(search);
+    const id = params.get('id');
     const productData = await getProduct(id);
     setProduct(productData);
   };
