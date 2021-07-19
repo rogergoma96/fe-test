@@ -12,26 +12,34 @@ import styles from './Product.scss';
  * @param {string} price - Product price.
  * @returns {Object} JSX
  */
-const Product = ({ brand, id, imgUrl, model, price }) => (
-  <Link to={`/${id}`} className={styles.product}>
-    <img
-      className={styles.image}
-      width="160"
-      height="212"
-      alt={model}
-      src={imgUrl}
-      loading="lazy"
-    />
-    <div className={styles.info}>
-      <p className={styles.brand}>{brand}</p>
-      <p className={styles.model}>{model}</p>
-      {price ? (
-        <p className={styles.price}>{price} €</p>
-      ) : (
-        <p className={styles['sold-out']}>SOLD OUT</p>
-      )}
-    </div>
-  </Link>
-);
+const Product = ({ brand, id, imgUrl, model, price }) => {
+  const transformedModel = model.replace(/ /g, '_');
+  const transformedBrand = brand.replace(/ /g, '_');
+
+  return (
+    <Link
+      to={`/products/${transformedBrand}_${transformedModel}?id=${id}`}
+      className={styles.product}
+    >
+      <img
+        className={styles.image}
+        width="160"
+        height="212"
+        alt={model}
+        src={imgUrl}
+        loading="lazy"
+      />
+      <div className={styles.info}>
+        <p className={styles.brand}>{brand}</p>
+        <p className={styles.model}>{model}</p>
+        {price ? (
+          <p className={styles.price}>{price} €</p>
+        ) : (
+          <p className={styles['sold-out']}>SOLD OUT</p>
+        )}
+      </div>
+    </Link>
+  );
+};
 
 export default Product;

@@ -1,0 +1,25 @@
+.breadcrumbs {
+  display: flex;
+  font-size: 0.8rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: 500px) {
+    font-size: 0.6rem;
+  }
+}
+
+.breadcrumb a {
+  appearance: none;
+  color: #666;
+  text-decoration: none;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.separator {
+  margin: 0 8px;
+}

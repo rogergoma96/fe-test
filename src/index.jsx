@@ -1,12 +1,10 @@
 import ReactDOM from 'react-dom';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import Dexie from 'dexie';
 
-import Catalog from './pages/Catalog/Catalog';
 import Layout from './components/Layout/Layout';
-import ProductDetail from './pages/ProductDetail/ProductDetail';
-
 import '@babel/polyfill';
+
+import routeConfig from './utils/routeConfig';
 
 import './styles.scss';
 
@@ -14,20 +12,9 @@ ReactDOM.render(
   <BrowserRouter>
     <Layout>
       <Switch>
-        <Route
-          component={(props) => (
-            <ProductDetail db={new Dexie('ProductDetail')} {...props} />
-          )}
-          exact
-          path="/:id"
-        />
-        <Route
-          component={(props) => (
-            <Catalog db={new Dexie('Catalog')} {...props} />
-          )}
-          exact
-          path="/"
-        />
+        {routeConfig.map((route) => (
+          <Route key={route} {...route} />
+        ))}
       </Switch>
     </Layout>
   </BrowserRouter>,

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+import Breadcrumbs from '../Breadcrumbs/Breadcrumbs';
 import CartIcon from '../Icons/cartIcon';
 
 import styles from './Layout.scss';
@@ -48,8 +49,9 @@ const Layout = ({ children }) => {
     <>
       <header className={styles.header}>
         <Link to="/" className={styles.logo}>
-          FE-TEST
+          MOBILE ZONE
         </Link>
+        <Breadcrumbs />
         <div className={styles.cart}>
           <CartIcon />
           <p className={styles.items}>{cartItems}</p>

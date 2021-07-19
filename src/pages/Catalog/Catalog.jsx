@@ -40,7 +40,7 @@ const Catalog = ({ db }) => {
         defaultProducts={defaultProducts.current}
         onChange={setProducts}
       />
-      {products.length !== 0 && (
+      {products.length !== 0 ? (
         <div className={styles.products}>
           {products.map((product) => (
             <Product
@@ -53,6 +53,8 @@ const Catalog = ({ db }) => {
             />
           ))}
         </div>
+      ) : (
+        <p className={styles.error}>Products no found</p>
       )}
     </div>
   );
