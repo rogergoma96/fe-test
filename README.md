@@ -1,25 +1,44 @@
-## How to develop the app
+# FE-TEST
 
-**Initialize the environment**
-
-1\. Clone the repository:
+## Install dependencies
 
 ```
-git clone https://github.com/rogergoma96/fe-test-zara.git
+> yarn
 ```
 
-2\. Install the dependencies:
+or
 
-```bash
-yarn install
+```
+> yarn install
 ```
 
-**Launch the app**
+## Local
 
-1\. Run the development server:
-
-```bash
+```
 yarn start
 ```
 
-2\. Open [localhost:3000](http://localhost:3000) to see the live app.
+
+## Build project
+
+```
+> yarn build
+```
+
+## Unit testing
+
+```
+> yarn test
+```
+
+If you need the coverage for the unit testing.
+
+```
+> yarn run test:coverage
+```
+
+## Eslint
+
+```
+> yarn lint
+```

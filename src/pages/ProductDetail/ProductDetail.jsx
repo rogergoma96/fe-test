@@ -12,6 +12,7 @@ import styles from './ProductDetail.scss';
 /**
  * Product detail page.
  *
+ * @param {object} db - Dexie DB.
  * @returns {Object} JSX
  */
 const ProductDetail = ({ db }) => {

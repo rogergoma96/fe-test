@@ -10,6 +10,7 @@ import styles from './Catalog.scss';
 /**
  * Product list.
  *
+ * @param {object} db - Dexie DB.
  * @returns {Object} JSX
  */
 const Catalog = ({ db }) => {

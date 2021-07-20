@@ -1,7 +1,7 @@
 const host = 'https://front-test-api.herokuapp.com';
 
 /**
- * Get specific product.
+ * Get specific product from the api.
  *
  * @returns {Object[]} Products list
  */
@@ -10,6 +10,13 @@ const getProductFromApi = async (id) => {
   return response.json();
 };
 
+/**
+ * Get specific product from indexedDB.
+ * If it is not posible, get the product from the api.
+ *
+ * @param {object} db - Dexie DB.
+ * @returns {Object[]} Products list
+ */
 const getProductFromApiOrDB = async (db, id) => {
   db.version(1).stores({ product: 'id,value' });
   db.open();

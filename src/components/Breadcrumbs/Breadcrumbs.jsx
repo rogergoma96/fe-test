@@ -3,7 +3,13 @@ import withBreadcrumbs from 'react-router-breadcrumbs-hoc';
 
 import styles from './Breadcrumbs.scss';
 
-const PureBreadcrumbs = ({ breadcrumbs }) => (
+/**
+ * Render the breadcrumbs of the actual page.
+ *
+ * @param {object} breadcrumbs
+ * @returns {*} JSX
+ */
+const Breadcrumbs = ({ breadcrumbs }) => (
   <ol className={styles.breadcrumbs} data-testid="breadcrumbs">
     {breadcrumbs.map(
       ({ breadcrumb, match }, index) =>
@@ -23,4 +29,4 @@ const PureBreadcrumbs = ({ breadcrumbs }) => (
   </ol>
 );
 
-export default withBreadcrumbs()(PureBreadcrumbs);
+export default withBreadcrumbs()(Breadcrumbs);

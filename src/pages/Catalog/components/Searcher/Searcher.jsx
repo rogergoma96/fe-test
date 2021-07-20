@@ -11,7 +11,7 @@ const Searcher = ({ onChange, defaultProducts }) => {
   /**
    * Filter the list according to the word entered.
    *
-   * @param {Object} e - Event data.
+   * @param {Object} searchedWord - The searched word.
    */
   const filterBySearch = async (searchedWord) => {
     const filteredProducts = defaultProducts.filter(

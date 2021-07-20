@@ -4,6 +4,9 @@ import Dexie from 'dexie';
 import Catalog from '../pages/Catalog/Catalog';
 import ProductDetail from '../pages/ProductDetail/ProductDetail';
 
+/**
+ * Aplication routes
+ */
 const routeConfig = [
   {
     path: '/products',
